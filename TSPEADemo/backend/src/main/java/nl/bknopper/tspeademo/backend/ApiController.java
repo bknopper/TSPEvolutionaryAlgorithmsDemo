@@ -36,7 +36,7 @@ public class ApiController {
         return runner.getCurrentBest(true);
     }
 
-    @RequestMapping(value = "getCities", method = RequestMethod.GET)
+    @RequestMapping(value = "cities", method = RequestMethod.GET)
     public List<City> getCities() {
         return TSPUtils.getRandomizedCities();
     }
