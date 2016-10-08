@@ -206,7 +206,7 @@ angular.module('myApp').directive('demo', ['$routeParams', function ($routeParam
                 }
 
                 $scope.areas = response.data.route;
-                $scope.run.bestFitness = response.data.fitness;
+                $scope.run.bestFitness = parseInt(response.data.fitness);
                 $scope.run.generation = response.data.generation;
 
                 $scope.fitnessPlot.ys = $scope.fitnessPlot.ys.slice(1);
@@ -240,7 +240,7 @@ angular.module('myApp').directive('demo', ['$routeParams', function ($routeParam
                             if(algorithmResult.algorithmStyle) {
                                 algorithmResult.algorithmStyle = $scope.settings.selectedAlgorithmStyle;
                             }
-
+                            algorithmResult.fitness = parseInt(algorithmResult.fitness);
                             firebaseRef.push({algorithmResult: algorithmResult});
                             $scope.updateHistory();
                         }
@@ -357,7 +357,7 @@ angular.module('myApp').directive('demo', ['$routeParams', function ($routeParam
                 $scope.fitnessPlot.plot.setData($scope.fitnessPlot.series);
                 $scope.fitnessPlot.plot.draw();
 
-                return $http.get('http://localhost:8080/api/getCities').then(function (response) {
+                return $http.get('http://localhost:8080/api/cities').then(function (response) {
                     $scope.areas = response.data;
                     $scope.updateRoute();
                 });
