@@ -11,7 +11,7 @@ buildscript {
 }
 apply plugin: 'spring-boot'
 sourceCompatibility = 1.8
-mainClassName = 'nl.bknopper.tspeademo.backend.WebApp'
+mainClassName = 'nl.bknopper.tspeademo.backend.WebApp'  
 
 repositories {
     mavenLocal()
@@ -20,7 +20,6 @@ repositories {
 
 dependencies {
     compile "junit:junit:4.11"
-    compile "gov.nasa:worldwind:2.0.0-986"
     compile "org.jogamp.gluegen:gluegen-rt-main:2.2.1"
     compile "org.jogamp.jogl:jogl-all-main:2.2.1"
     compile "org.springframework.boot:spring-boot-starter-web:1.3.5.RELEASE"
